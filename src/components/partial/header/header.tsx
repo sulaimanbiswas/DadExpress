@@ -1,10 +1,16 @@
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, Bell, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="h-[50px] bg-primary w-screen grid items-center grid-cols-[173px_1fr] lg:grid-cols-[240px_50%_1fr]">
+    <div
+      className="h-[50px] pr-6  w-screen grid items-center grid-cols-[173px_1fr] lg:grid-cols-[240px_50%_1fr]"
+      style={{
+        background:
+          "linear-gradient(218.47deg, rgb(59, 58, 90) -74.13%, rgb(129, 78, 240) 106.5%)",
+      }}
+    >
       <div className="flex items-center">
         <div className=" w-16 flex justify-center items-center flex-shrink-0">
           <button className="flex justify-center items-center w-6 h-6">
@@ -23,7 +29,18 @@ const Header = () => {
         </Link>
       </div>
       <div></div>
-      <div className="flex items-center"></div>
+      <div className="flex items-center w-full justify-end gap-3">
+        <Link
+          href="/notificaton"
+          className="h-8 w-10 bg-white/10 flex  justify-center items-center rounded-md "
+        >
+          <Bell className="text-white" size={20} fill="#fff" />
+        </Link>
+
+        <div className="h-7 w-7 bg-white flex justify-center items-center rounded-full p-1">
+          <User strokeWidth={2.5} className="text-primary" />
+        </div>
+      </div>
     </div>
   );
 };
