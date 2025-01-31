@@ -19,7 +19,9 @@ const Sidebar = () => {
             <div>$ 2,28</div>
           </div>
         </div>
-        <Button className="">Top up the balance</Button>
+        <Button className="h-8 bg-pink-200/50 hover:bg-pink-200/60 text-pink-500 text-xs font-medium">
+          Top up the balance
+        </Button>
       </div>
     </aside>
   );
