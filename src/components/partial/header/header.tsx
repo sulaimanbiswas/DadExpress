@@ -17,7 +17,7 @@ const Header = () => {
             <AlignJustify size={22} className="text-white" />
           </button>
         </div>
-        <Link href="/accounts" className="h-6 flex items-center">
+        <Link href="/accounts" className="h-6 flex items-center mt-1">
           <Image
             className="dark:invert"
             src="/logo.svg"
