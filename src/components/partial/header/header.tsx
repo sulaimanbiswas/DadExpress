@@ -1,3 +1,12 @@
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { DropdownMenuArrow } from "@radix-ui/react-dropdown-menu";
 import { AlignJustify, Bell, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,9 +46,40 @@ const Header = () => {
           <Bell className="text-white" size={20} fill="#fff" />
         </Link>
 
-        <div className="h-7 w-7 bg-white flex justify-center items-center rounded-full p-1">
-          <User strokeWidth={2.5} className="text-primary" />
-        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <div className="h-[26px] w-[26px] bg-white flex justify-center items-center rounded-full p-1 cursor-pointer">
+              <User strokeWidth={2.5} className="text-primary" />
+            </div>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-[200px] pt-4">
+            <DropdownMenuLabel>
+              <div className="flex w-full justify-center flex-col items-center gap-2">
+                <div className="h-10 w-10 bg-gray-400 flex justify-center items-center rounded-full p-1">
+                  <User strokeWidth={2.5} className="text-primary-foreground" />
+                </div>
+                <p className="text-xs font-normal">
+                  dadexpresslimited@gmail.com
+                </p>
+              </div>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-xs">Settings</DropdownMenuItem>
+            <DropdownMenuItem className="text-xs">
+              Notification
+            </DropdownMenuItem>
+            <DropdownMenuItem className="text-xs">
+              Trams of use
+            </DropdownMenuItem>
+            <DropdownMenuItem className="text-xs">
+              Change Password
+            </DropdownMenuItem>
+            <DropdownMenuItem className="flex justify-center items-center w-full bg-gray-100 font-medium text-xs mt-2">
+              Log out
+            </DropdownMenuItem>
+            <DropdownMenuArrow className="fill-white" />
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </div>
   );
