@@ -1,3 +1,5 @@
+"use client";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,12 +8,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ThemeContext } from "@/context/theme-context";
 import { DropdownMenuArrow } from "@radix-ui/react-dropdown-menu";
 import { AlignJustify, Bell, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
 
 const Header = () => {
+  const { collapse, setCollapsed } = useContext(ThemeContext);
   return (
     <div
       className="grid h-[50px] w-full grid-cols-[173px_0%_1fr] items-center pr-6 lg:grid-cols-[240px_50%_1fr]"
@@ -22,7 +27,10 @@ const Header = () => {
     >
       <div className="flex items-center">
         <div className="flex w-16 flex-shrink-0 items-center justify-center">
-          <button className="flex h-6 w-6 items-center justify-center">
+          <button
+            className="flex h-6 w-6 items-center justify-center"
+            onClick={() => setCollapsed(!collapse)}
+          >
             <AlignJustify size={22} className="text-white" />
           </button>
         </div>
