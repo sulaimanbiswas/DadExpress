@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ThemeContext } from "@/context/theme-context";
+import { ThemeContext } from "@/theme/theme-context";
 import { DropdownMenuArrow } from "@radix-ui/react-dropdown-menu";
 import { AlignJustify, Bell, User } from "lucide-react";
 import Image from "next/image";

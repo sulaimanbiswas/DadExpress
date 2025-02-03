@@ -1,7 +1,7 @@
 "use client";
 
-import ThemeContextProvider from "@/context/theme-context";
 import NProgressBarProvider from "@/theme/nprogress-bar-provider";
+import ThemeContextProvider from "@/theme/theme-context";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   return (

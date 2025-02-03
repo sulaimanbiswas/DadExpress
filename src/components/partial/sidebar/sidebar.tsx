@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ThemeContext } from "@/context/theme-context";
 import { cn } from "@/lib/utils";
+import { ThemeContext } from "@/theme/theme-context";
 import { LayoutDashboard } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,7 +51,7 @@ const Sidebar = () => {
             isActive && "bg-gray-100 transition-all",
           )}
         >
-          <Link href="/" className="">
+          <Link href="/dashboard" className="">
             <div className="flex h-12 items-center">
               <div className="flex w-16 items-center justify-center">
                 <LayoutDashboard
@@ -76,7 +76,7 @@ const Sidebar = () => {
             isActive && "bg-gray-100 transition-all",
           )}
         >
-          <Link href="/" className="">
+          <Link href="/accounts" className="">
             <div className="flex h-12 items-center">
               <div className="flex w-16 items-center justify-center">
                 <SiMeta
