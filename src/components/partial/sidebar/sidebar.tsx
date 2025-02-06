@@ -3,8 +3,14 @@
 import { getMenuList } from "@/components/partial/sidebar/menu-list";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { ThemeContext } from "@/theme/theme-context";
+import { Ellipsis } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,7 +30,11 @@ const Sidebar = () => {
       )}
     >
       {!collapse && (
-        <div className="flex flex-col gap-3 border-b border-[#e4e6eb] p-[18px] pr-5 pt-3.5">
+        <div
+          className={cn(
+            "flex flex-col gap-3 border-b border-[#e4e6eb] p-[18px] pr-5 pt-3.5",
+          )}
+        >
           <div className="flex w-full cursor-pointer flex-col justify-between gap-2 rounded-md bg-[#f5f6f7] px-2 py-2 font-medium">
             <Image
               className="h-[22px] w-[22px] dark:invert"
@@ -49,9 +59,20 @@ const Sidebar = () => {
           <div key={index}>
             {groupLabel && (
               <div className="px-5 py-2">
-                <p className="text-sm font-medium text-gray-500">
-                  {groupLabel}
-                </p>
+                {!collapse ? (
+                  <p className="text-sm font-medium text-gray-500">
+                    {groupLabel}
+                  </p>
+                ) : (
+                  <Tooltip delayDuration={100}>
+                    <TooltipTrigger asChild>
+                      <Ellipsis className="text-sm font-medium text-gray-400" />
+                    </TooltipTrigger>
+                    <TooltipContent side="right" sideOffset={20}>
+                      <p>{groupLabel}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                )}
               </div>
             )}
             {menus?.map(

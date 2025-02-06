@@ -78,7 +78,7 @@ const CollapseMenu = ({
           </div>
         </div>
       </CollapsibleTrigger>
-      <CollapsibleContent className="w-full transition-all duration-1000 animate-in animate-out">
+      <CollapsibleContent className="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down w-full overflow-hidden">
         <div className="mb-4">
           {submenus.map(({ href, label }, index) => (
             <div

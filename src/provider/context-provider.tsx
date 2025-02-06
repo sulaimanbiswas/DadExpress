@@ -2,13 +2,16 @@
 
 import NProgressBarProvider from "@/theme/nprogress-bar-provider";
 import ThemeContextProvider from "@/theme/theme-context";
+import UiProvider from "./ui-provider";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <ThemeContextProvider>
-        <NProgressBarProvider>{children}</NProgressBarProvider>
-      </ThemeContextProvider>
+      <UiProvider>
+        <ThemeContextProvider>
+          <NProgressBarProvider>{children}</NProgressBarProvider>
+        </ThemeContextProvider>
+      </UiProvider>
     </>
   );
 };
