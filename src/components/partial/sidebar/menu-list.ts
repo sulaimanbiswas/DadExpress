@@ -30,7 +30,7 @@ type Group = {
   menus: Menu[];
 };
 
-export function getMenuList(pathname: string): Group[] {
+export const getMenuList = (pathname: string): Group[] => {
   return [
     {
       groupLabel: "",
@@ -99,4 +99,4 @@ export function getMenuList(pathname: string): Group[] {
       ],
     },
   ];
-}
+};
